@@ -13,7 +13,7 @@ export const MainContainer = styled.div`
   color: white;
   font-family: Manrope;
   font-size: 20px;
-    background-image: url(${homeImg});
+  background-image: url(${homeImg});
   background-position: center;
   background-size: cover;
   background-position: center;

@@ -1,6 +1,10 @@
+
+import MainTitle from "../../components/MainTitle/MainTitle";
+
 const HomePage = () => {
     return (
-        <div><p>Hello, world!</p></div>
+        <MainTitle title='Car rental in Ukraine - we are always with you'
+        style={{ whiteSpace: 'normal' }}/>
     )
 }
 
