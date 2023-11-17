@@ -1,31 +1,55 @@
-import React, {useEffect, useState} from 'react';
-import CatalogList from '../../components/CatalogList/CatalogList';
-import Filter from '../../components/Filter/Filter';
+import React from 'react';
+// import CatalogList from '../../components/CatalogList/CatalogList';
+// import Filter from '../../components/Filter/Filter';
 import Loader from '../../components/Loader/Loader';
 import {
   useGetAdvertsQuery,
-  useGetCarsByPageQuery,
+//   useGetCarsByPageQuery,
 } from '../../redux/operations';
 
 const CatalogPage = () => {
 
-    const [cars, setCars] = useState([]);
-    const [page, setPage] = useState(1);
-    const { data, error, isLoading, isFetching } = useGetCarsByPageQuery(page);
-    
-  useEffect(() => {
-        if (data) {
-    setCars(prevCars=> [...prevCars, ...data])
-};
-  }, [data]);
+    const { data, error, isFatching } = useGetAdvertsQuery();
+//     const [cars, setCars] = useState([]);
+//     const [page, setPage] = useState(1);
+    // const { data, error, isLoading, isFetching } = useGetCarsByPageQuery(page);
+//     const { data: allAdverts } = useGetAdvertsQuery();
 
+//   useEffect(() => {
+//         if (data) {
+//     setCars(prevCars=> [...prevCars, ...data])
+// };
+//   }, [data]);
+
+//       const [filters, setFilters] = useState({
+//     make: '',
+//     filteredPrices: [],
+//     minMileage: '',
+//     maxMileage: '',
+//   });
+//   const [filteredAdverts, setFilteredAdverts] = useState(null);
+//   const [isFiltering, setIsFiltering] = useState(false);
+
+    
     return (
+        
         <>
-            {isFetching && <Loader/>}
-            <Filter />
-            <CatalogList/>
-      {/* {cars?.length > 0 && <CatalogList cars={cars} />} */}
-        </>
+            <p>Hello!!!</p>
+      {/* {error && <p>Ooops... something went wrong</p>}
+      {isFatching ? (
+        <Loader />
+      ) : (
+        <ul>
+          {data.map((car) => (
+            <li key={car.id}>
+              <img src={car.img} alt="Car" width={250} />
+              <p>{car.model}</p>
+            </li>
+          ))}
+        </ul>
+      )} */}
+    </>
+            
     )
 
 }
