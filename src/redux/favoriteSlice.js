@@ -7,7 +7,7 @@ const initialState = {
 export const favoriteSlice = createSlice({
     name: 'favorites',
     initialState,
-    redusers: {
+    reduсers: {
         addFavorite: (state, action) => {
             state.favorites.push(action.payload);
         },
