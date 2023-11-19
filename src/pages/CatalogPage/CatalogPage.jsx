@@ -2,9 +2,10 @@ import React, {useState, useEffect} from 'react';
 import CatalogItem from '../../components/CatalogItem/CatalogItem';
 // import Filter from '../../components/Filter/Filter';
 import Loader from '../../components/Loader/Loader';
+import Button from '../../components/Button/Button';
 import { CatalogListWrapper, CatalogList } from './CatalogPage.styled';
 import {
-  useGetAdvertsQuery,
+  // useGetAdvertsQuery,
   useGetCarsByPageQuery,
 } from '../../redux/operations';
 
@@ -12,8 +13,8 @@ import {
 const CatalogPage = () => {
       const [cars, setCars] = useState([]);
     const [page, setPage] = useState(1);
-    const { data, error, isLoading, isFetching } = useGetCarsByPageQuery(page);
-    const { data: allAdverts } = useGetAdvertsQuery();
+    const { data, error, isFetching } = useGetCarsByPageQuery(page);
+    // const { data: allAdverts } = useGetAdvertsQuery();
 
   useEffect(() => {
         if (data) {
@@ -43,16 +44,18 @@ const CatalogPage = () => {
         {/* <Filter/> */}
 
         <CatalogListWrapper>
-          <CatalogList>
-            {cars.length > 0 ? (
-          cars.map((car, index) => <CatalogItem key={index} data={car} />)
-        ) : null}
-</CatalogList>
+          {error && <p>Ooops... something went wrong</p>}
+          {isFetching ? (
+            <Loader />
+          ) : (
+            <CatalogList>
+              {cars.length > 0 ? (
+                cars.map((car, index) => <CatalogItem key={index} data={car} />)
+              ) : null}
+            </CatalogList>)}
+          <Button>{ loadMore}</Button>
         </CatalogListWrapper>
-      {/* {error && <p>Ooops... something went wrong</p>}
-      {isFatching ? (
-        <Loader />
-      ) : (
+      {/* 
         <ul>
           {cars.map((car) => (
             <li key={car.id}>
