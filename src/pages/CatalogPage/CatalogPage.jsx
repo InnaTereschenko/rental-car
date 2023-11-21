@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import CatalogItem from '../../components/CatalogItem/CatalogItem';
 // import Filter from '../../components/Filter/Filter';
 import Loader from '../../components/Loader/Loader';
-import Button from '../../components/Button/Button';
-import { CatalogListWrapper, CatalogList } from './CatalogPage.styled';
+// import Button from '../../components/Button/Button';
+import { CatalogListWrapper, CatalogList, LoadMore } from './CatalogPage.styled';
 import {
   // useGetAdvertsQuery,
   useGetCarsByPageQuery,
@@ -53,18 +53,9 @@ const CatalogPage = () => {
                 cars.map((car, index) => <CatalogItem key={index} data={car} />)
               ) : null}
             </CatalogList>)}
-          <Button>{ loadMore}</Button>
+          <LoadMore onClick = {loadMore} variant='text' disabled={isFetching}>{loadMore}</LoadMore>
         </CatalogListWrapper>
-      {/* 
-        <ul>
-          {cars.map((car) => (
-            <li key={car.id}>
-              <img src={car.img} alt="Car" width={250} />
-              <p>{car.model}</p>
-            </li>
-          ))}
-        </ul> */}
-      {/* )}  */}
+     
     </>
             
     )

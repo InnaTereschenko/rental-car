@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const MainContainer = styled.div`
-  background-color: #fffff;
+  background-color: #ffffff;
   padding: 0 128px 0 128px;
   min-height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
   justify-content: center;
   font-family: Manrope;
   font-size: 20px;
-  color: #00000;
+  color: #000000;
 
 `;
 
