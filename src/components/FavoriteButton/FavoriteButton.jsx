@@ -20,7 +20,7 @@ const FavoriteButton = ({ data }) => {
   };
   return (
     <button type="button" onClick={handleToggleFavorite}>
-      {isChecked ? <AiTwotoneHeart /> : <AiOutlineHeart />}
+      {isChecked ? <AiTwotoneHeart size={18}  /> : <AiOutlineHeart />}
     </button>
   );
 };
