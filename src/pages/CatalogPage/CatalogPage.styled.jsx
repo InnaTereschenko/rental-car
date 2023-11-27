@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CatalogListWrapper = styled.div`
-margin-top: 50px;
+margin-top: 150px;
   width: 1184px;
   margin-left: auto;
   margin-right: auto;
