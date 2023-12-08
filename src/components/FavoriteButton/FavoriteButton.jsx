@@ -3,6 +3,7 @@ import { Notify } from "notiflix/build/notiflix-notify-aio";
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
 import { addFavorite, removeFavorite } from "../../redux/favoriteSlice";
 import { selectFavorites } from "../../redux/selectors";
+import { FavoriteBtn } from './FavoriteButton.styled';
 
 const FavoriteButton = ({ data }) => {
   const dispatch = useDispatch();
@@ -19,9 +20,11 @@ const FavoriteButton = ({ data }) => {
     }
   };
   return (
-    <button type="button" onClick={handleToggleFavorite}>
-      {isChecked ? <AiTwotoneHeart size={18}  /> : <AiOutlineHeart />}
-    </button>
+    <FavoriteBtn type="button" onClick={handleToggleFavorite}>
+    
+      {isChecked ? <AiTwotoneHeart size={18} fill="#3470ff" /> : <AiOutlineHeart fill="#fff"/>}
+    
+    </FavoriteBtn>
   );
 };
 
